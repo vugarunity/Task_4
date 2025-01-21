@@ -14,14 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-// Абстрактный класс для общей логики
 abstract class BaseTest {
     protected WebDriver driver;
-
-//    @BeforeAll
-//    public static void setupClass() {
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-//    }
+    
 
     @BeforeEach
     void setUp() {
