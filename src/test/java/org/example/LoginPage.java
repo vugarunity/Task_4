@@ -13,7 +13,6 @@ class LoginPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    // Локаторы
     @FindBy(css = "#user_email")
     public WebElement emailField;
 
@@ -29,7 +28,6 @@ class LoginPage {
     @FindBy(css = "ul.parsley-errors-list")
     public WebElement passwordError;
 
-    // Методы взаимодействия
     public void openLoginPage() {
         driver.get("https://gb.ru/login");
     }
@@ -39,11 +37,6 @@ class LoginPage {
         this.wait = wait;
         PageFactory.initElements(driver, this);
     }
-
-//    private void enterText(WebElement element, String text) {
-//        wait.until(ExpectedConditions.visibilityOf(element)).clear();
-//        element.sendKeys(text);
-//    }
 
     public void EmailInField(String username) {
         wait.until(ExpectedConditions.visibilityOf(emailField)).sendKeys(username);
@@ -77,29 +70,3 @@ class LoginPage {
         }
     }
 }
-    // Локаторы
-//    private final By emailField = By.id("user_email"); // Пример оптимизации
-//    private final By passwordField = By.id("user_password"); // Пример оптимизации
-//    private final By loginButton = By.cssSelector("button[type='submit']");
-//    private final By emailError = By.id("email-error");
-//    private final By passwordError = By.id("password-error");
-
-//    public void enterEmail(String email) {
-//        driver.findElement(emailField).sendKeys(email);
-//    }
-//
-//    public void enterPassword(String password) {
-//        driver.findElement(passwordField).sendKeys(password);
-//    }
-//
-//    public void clickLoginButton() {
-//        driver.findElement(loginButton).click();
-//    }
-//
-//    public boolean isEmailErrorDisplayed() {
-//        return !driver.findElements(emailError).isEmpty();
-//    }
-//
-//    public boolean isPasswordErrorDisplayed() {
-//        return !driver.findElements(passwordError).isEmpty();
-//    }
